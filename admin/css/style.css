@@ -1,0 +1,235 @@
+    * {
+        margin: 0;
+        padding: 0;
+        
+        box-sizing: border-box;
+        font-family: 'times new roman', serif;
+    }
+
+
+    .home {
+        width: 100%;
+        
+    }
+    
+    .img img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+     
+
+    
+    .logo {
+        width: 9%;
+        height: 9%;
+        margin-left: 20px;
+    }
+    
+    #navbar {
+        background-color: #a604f1 ;
+    }
+
+    #navbar-items{
+        margin-left: 200px;
+        font-size: 22px;
+    
+    }
+    
+    .nav-item .nav-link {
+        align-items: end;
+        color: #333333;
+    }
+    
+    .nav-item .nav-link:hover {
+        color: #fff;
+    }
+    
+    #nav {
+        background-color: #333333;
+        display: flex;
+        align-items: center;
+    }
+
+    #navbar2{
+        display: flex;
+        background-color: #be8ae9;
+    }
+    
+    #nav2-items{
+        margin-left: 10px;
+    }
+    
+    #profile {
+        background-color: grey;
+    }
+    
+    #image {
+        width: 160px;
+        border-radius: 70%;
+    }
+    
+    #image .profile-img {
+        border-radius: 70px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border: 2px soild black;
+    }
+    
+    #btn :hover {
+        background-color: black;
+        color: #928d8d;
+    }
+
+    .card  .card-img-top{
+        width: 100%;
+        height: 320px;
+        object-fit: contain;
+        
+    }
+
+    #insert {
+        width: 65%;
+        height: 130vh;
+        background-color: #217559;
+        margin-bottom: 130px;
+        border-radius: 10px;
+    }
+    
+
+
+    
+    
+
+/* login */
+
+#login {
+    width: 50%;
+    height: 60vh;
+    background-color:  #a604f1 ;
+    border-radius: 10px;
+   
+}
+#register {
+    width: 70%;
+    height: 95vh;
+    background-color:  #a604f1 ;
+    border-radius: 10px;
+   
+}
+#side-lg {
+    background-color: #b89fe9;;
+    height: 55vh;
+    border-radius: 10px;
+}
+#side-lg h3 {
+    color: #ffc800;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#side-rg {
+    background-color: #be8ae9;
+    height: 90vh;
+    border-radius: 10px;
+}
+#side-rg h3 {
+    color: #ffc800;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+
+#side1 h3 {
+    color: #ffc800;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#side1 {
+    background-color: #430e6e;;
+    height: 95vh;
+    border-radius: 10px;
+}
+
+#side2 h3 {
+    margin-top: 30px;
+    color: #ffc800;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px black;
+}
+
+.input2 input {
+    margin-top: 15px;
+    width: 300px;
+    border: none;
+    border-bottom: 2px solid #ffc800;
+}
+
+.input2 input ::placeholder {
+    font-weight: bold;
+}
+
+#btnlogin {
+    padding-top: 10px;
+}
+
+#btnlogin a {
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: #ffc800;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-shadow: 0px 0px 1px black;
+}
+
+#side2 p {
+    margin-top: 10px;
+}
+
+@media screen and (max-width:991px) {
+    .input2 input {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width:765px) {
+    .input2 input {
+        width: 260px;
+    }
+    #side2 {
+        height: 90vh;
+    }
+}
+
+
+/* login */
+
+/* footer */
+
+#footer {
+    padding: 0 0 30px 0px;
+    color: white;
+    font-size: 14px;
+    background-color: #333333;
+    margin-top: 100px;
+}
+
+
+#footer .copyright {
+    text-align: center;
+    float: center;
+}
+
+#footer .credits {
+    float: center;
+    font-size: 15px;
+}
+
+#footer .credits a {
+    color: #ffc800;
+}
+
