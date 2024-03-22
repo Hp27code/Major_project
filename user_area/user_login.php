@@ -66,9 +66,19 @@
     $result=mysqli_query($conn,$select_query);
     $row_count=mysqli_num_rows($result);
     $row_data=mysqli_fetch_assoc($result);
+    $user_ip=getIPAddress();
+
+    //cart item 
+    $select_query="select * from `cart_details` where ip_address=$user_ip'";
+    $select_cart=mysqli_query($conn,$select_query_cart);
+    $row_count_cart=mysqli_num_rows($row_count_cart);
     if($row_count>0){
         if(password_verify($user_username,$row_data['user_password'])){
-       
+       if($row_count==1 and $row_count_cart==0){
+        echo "<script>alert('login successful')</script>";
+        echo "<script>window.open('profile.php',_self')</script>"
+       }
+
      } else{
                 echo "<script>alert('invaild credentials')</script>";
             }
