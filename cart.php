@@ -195,7 +195,7 @@ cart();
 
                               }
                               if(isset($_POST['Continue_shopping'])){
-                                              echo "<script>window.open('category.php','_self')</script>";
+                                              echo "<script>window.open('index.php','_self')</script>";
                                             }           
                             ?>
                                         </div>

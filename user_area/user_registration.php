@@ -1,8 +1,8 @@
 <?php
-//(0);
-include('include/connect.php');
-//include('functions/common_functions.php');
-include('common_functions.php');
+
+include('../include/connect.php');
+
+include('../functions/common_functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +34,10 @@ include('common_functions.php');
           <div class="collapse navbar-collapse" id="navbar-items">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active"  href="../index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="product.php">Product</a>
+                <a class="nav-link" href="../product.php">Product</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,13 +50,13 @@ include('common_functions.php');
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.php">About</a>
+                <a class="nav-link" href="../about.php">About</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="cart.php">
+                <a class="nav-link" href="../cart.php">
                  <i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item();?></sup></a>
               </li>   
               
@@ -184,7 +184,6 @@ if(isset($_POST['user_register'])){
     $user_username=$_POST['user_username'];
     $user_email=$_POST['user_email'];
     $user_password=$_POST['user_password'];
-    $hash_password=password_hash($user_password,PASSWORD_DEFAULT);
     $conf_user_password=$_POST['conf_user_password'];
     $user_address=$_POST['user_address'];
     $user_contact=$_POST['user_contact'];
@@ -211,7 +210,7 @@ else{
      move_uploaded_file($user_image_tmp,"./user_images/$user_image");
      $insert_query="insert into `user_table` (username,user_email,user_password,
      user_image,user_ip,user_address,user_mobile) values ('$user_username','$user_email',
-     '$hash_password','$user_image','$user_ip',' $user_address','$user_contact')";
+     '$user_password','$user_image','$user_ip',' $user_address','$user_contact')";
      $sql_execute=mysqli_query($conn,$insert_query);
      if($sql_execute){
          echo "<script>alert('Data inserted successfully')</script>";
@@ -220,17 +219,15 @@ else{
 
    //selecting cart items //
 
-   $slect_cart_items="select * from  `cart_details` where ip_address='$user_ip'";
+   $select_cart_items="select * from  `cart_details` where ip_address='$user_ip'";
    $result_cart=mysqli_query($conn,$select_cart_items);
    $rows_count=mysqli_num_rows($result_cart);
-
-   if($rows_count){
+    if($rows_count>0){
     $_SESSION['username']=$user_username;
     echo "<script>alert('you have item in your cart')</script>";
-   }else{
-    
     echo "<script>window.open('checkout.php','_self')</script>";
-    echo "<script>window.open('../category.php','_self')</script>";
+   }else{
+    echo "<script>window.open('../index.php','_self')</script>";
      
    }
 }

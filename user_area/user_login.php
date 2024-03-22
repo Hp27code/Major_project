@@ -56,3 +56,24 @@
 </body>
 
 </html>
+
+
+<?php
+ if (isset($_POST['user_login'])){
+    $user_username=$_POST['user_username'];
+    $user_password=$_POST['user_password'];
+    $select_query="select * from 'user_table' where username='$user_username'";
+    $result=mysqli_query($conn,$select_query);
+    $row_count=mysqli_num_rows($result);
+    $row_data=mysqli_fetch_assoc($result);
+    if($row_count>0){
+        if(password_verify($user_username,$row_data['user_password'])){
+       
+     } else{
+                echo "<script>alert('invaild credentials')</script>";
+            }
+    }else{
+        echo "<script>alert('invaild credentials')</script>";
+    }
+
+ }

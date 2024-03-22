@@ -70,7 +70,7 @@ include('../include/connect.php');
       <a class="nav-link" href="#">WELCOME GUEST </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="./user_area/user_login.php">LOGIN</a>
+  <a class="nav-link" href="./user_area/checkout.php">LOGIN</a>
 </li>
 </ul>
 

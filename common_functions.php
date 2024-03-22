@@ -29,7 +29,7 @@ $result_query=mysqli_query($conn,$select_query);
         <div class='card-body'>
           <h5 class='card-title'>$product_title</h5>
           <h5 class='card-text'>$product_price</h5>
-           <a href='category.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
+           <a href='index.php.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
           <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
            </div>
       </div>
@@ -69,7 +69,7 @@ if($num_of_rows==0){
         <div class='card-body'>
           <h5 class='card-title'>$product_title</h5>
           <h5 class='card-text'>$product_price</h5>
-           <a href='category.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
+           <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
          
            <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
            </div>
@@ -109,7 +109,7 @@ if($num_of_rows==0){
       <div class='card-body'>
         <h5 class='card-title'>$product_title</h5>
         <h5 class='card-text'>$product_price</h5>
-        <a href='category.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
+        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
          
          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
          </div>
@@ -130,7 +130,7 @@ while($row_data=mysqli_fetch_assoc($result_brands)){
 $brand_title=$row_data['brand_title'];
 $brand_id=$row_data['brand_id'];
 
-echo "<li class='nav-item'> <a href='category.php?brand=$brand_id' class='nav-link text-light'> $brand_title </a> </li>";
+echo "<li class='nav-item'> <a href='index.php?brand=$brand_id' class='nav-link text-light'> $brand_title </a> </li>";
 }
     
 }
@@ -143,7 +143,7 @@ while($row_data=mysqli_fetch_assoc($result_category)){
 $category_title=$row_data['category_title'];
 $category_id=$row_data['category_id'];
 
-echo "<li class='nav-item'> <a href='category.php?category=$category_id' class='nav-link text-light'> $category_title </a> </li>";
+echo "<li class='nav-item'> <a href='index.php?category=$category_id' class='nav-link text-light'> $category_title </a> </li>";
 }
 }
 
@@ -177,7 +177,7 @@ if($num_of_rows==0){
     <div class='card-body'>
       <h5 class='card-title'>$product_title</h5>
       <h5 class='card-text'>$product_price</h5>
-       <a href='category.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
+       <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
          
        <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
        </div>
@@ -217,9 +217,9 @@ $result_query=mysqli_query($conn,$select_query);
         <h5 class='card-title'>$product_title</h5>
         <p class='card-text'>$product_description<p>
         <h5 class='card-text'>$product_price</h5>
-        <a href='category.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
+        <a href='index.php?add_to_cart=$product_id' class='btn btn-info'>ADD TO CART</a>
          
-        <a href='category.php' class='btn btn-secondary'>GO TO HOME</a>
+        <a href='index.php' class='btn btn-secondary'>GO TO HOME</a>
          </div>
     </div>
 
@@ -278,13 +278,13 @@ function cart(){
       $num_of_rows=mysqli_num_rows($result_query);
       if($num_of_rows>0){
         echo "<script>alert('ALREADY PRESENT INSIDE CART')</script>";
-        echo "<script>window.open('category.php','_self')</script>";
+        echo "<script>window.open('index.php','_self')</script>";
       }else{
         $insert_query="insert into `cart_details` (product_id,ip_address,quantity)
          values ($get_product_id,'$get_ip_add',0)";
         $result_query=mysqli_query($conn,$insert_query);
         echo "<script>alert('ITEM ADDED TO CART')</script>";
-        echo "<script>window.open('category.php','_self')</script>";
+        echo "<script>window.open('index.php','_self')</script>";
       }
     }
   }
