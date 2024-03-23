@@ -74,20 +74,7 @@ include('../functions/common_functions.php');
             
              </div>
             </nav>
-            
-            <!---second nav start-->
-             <nav class="navbar navbar-expand-lg" id="navbar2">
-  <ul class="navbar-nav me-auto" id="nav2-items">
-    <li class="nav-item">
-      <a class="nav-link" href="#">WELCOME GUEST </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="./user_area/user_login.php">LOGIN</a>
-</li>
-</ul>
-
-</nav>
-
+           
  
     
     <div class="container-fluid my-3" id="register">
